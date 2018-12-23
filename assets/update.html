@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.teriprakritischool.org/update.php by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 11 Mar 2017 07:39:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+    
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    
+    
+                
+    <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/global.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/jquery.mmenu.css" type="text/css" />
+    <link rel="stylesheet" href="stylesheets/bootstrap-datetimepicker.css" type="text/css" />
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,400italic,300,700italic,300italic' rel='stylesheet' type='text/css'>  
+
+		<link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="javascripts/html5.js"></script>
+    <![endif]-->
+<script type="text/javascript" src="javascripts/jquery.js"></script>
+<script type="text/javascript" src="javascripts/jquery.mmenu.js"></script>
+<script type="text/javascript" src="javascripts/jquery.mmenu.setup.js"></script>
+<script type="text/javascript" src="javascripts/CrossBrowserSmoothScroll.js"></script>
+<script type="text/javascript" src="javascripts/jquery.tools.min.js"></script>
+<script type="text/javascript" src="javascripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="javascripts/jquery.fancybox.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/jquery.fancybox.css" media="screen" />
+<script type="text/javascript" src="javascripts/jquery.fancybox-media.js"></script>
+
+<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.html');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+
+<script src="javascripts/moment-with-locales.js"></script>
+<script type="text/javascript" src="javascripts/bootstrap-datetimepicker.js"></script>
+ <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+
+            });
+			
+			 
+        </script>
+        
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="javascripts/global.js"></script>
+<script type="text/javascript" src="javascripts/respond.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-16583087-26', 'auto');
+  ga('send', 'pageview');
+
+</script>
+ 
+<title> Best School in Delhi NCR- TERI Prakriti School</title>
+
+<meta name="description" content="TERI Prakriti School, Delhi is unique in its approach, as it aims to bring students closer to nature and give our children education that is relevant, meaningful, sustainable and learning intensive."/> 
+
+<meta name="keywords" content="kids school in delhi, green school gurgaon, nature school Delhi  "/> 
+
+</head>
+
+<body>
+
+<!--  / wrapper \ -->
+<div id="wrapper">
+
+    <!--  / main container \ -->
+    <div id="mainCntr">
+
+        <div id="headerCntr" class="inner">
+            <div class="container">
+            	<div class="row">
+                	
+                    <a class="logo" href="index-2.html"><img src="images/logo.png" alt=""></a>
+                    
+                    <div class="col-sm-9 col-sm-offset-2">
+                    
+                        <!--  / menu container \ -->
+                        <div class="menuBox"  id="nav">
+							<ul>
+                                    <li><a href="index-2.html">HOME</a></li>
+                                    <li><span>ABOUT US</span>
+                                    
+                                    	<ul>
+                                        	<li><a href="about.html">Overview</a></li>
+                                        	<li><a href="lata-vaidyanathan.html">Director</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                    	<span>ADMISSION</span>
+                                        
+                                        <ul>
+                                        	<li><a href="admission.html">Admission Process</a></li>
+                                        	<li><a href="fee.html">Fee Structure </a></li>
+                                        	<li><a href="curriculum.html">Curriculum </a></li>
+                                        	<li><a href="faq.html">FAQs </a></li>
+                                        </ul>
+                                    
+                                    </li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="career.html">CAREER</a></li>
+                                    
+                                    <li><a href="contact.html">CONTACT US</a></li>
+                                    <li class="register"><a href="registration.html">REGISTRATION</a></li>
+                                </ul>
+                        </div>
+                        <!--  \ menu container / -->
+                    <a class="mobileMenu" href="#nav"><img src="images/mobile_menu.png" alt=""></a>
+                    </div>
+            	
+                </div>    
+            </div>
+        </div>
+        
+        <!--  / topbanner box \ -->
+        <div class="topbannerBox">
+				
+            <img src="images/sub-banner.jpg" alt="">
+            
+        </div>
+        <!--  \ topbanner box / -->
+ 
+
+
+        <!--  / np box \ -->
+        <div class="npBox">
+        	<div class="container">
+				
+                <ul>
+                	<li><a href="index-2.html">Home</a> <i class="fa fa-angle-right"></i> </li>
+                	<li>New Updates</li>
+                </ul>
+                
+            </div>	
+        </div>
+        <!--  \ np box / -->
+	
+    	<div class="text-center">
+    
+			<h1 class="head-line main"><span>New Updates</span></h1>
+    	
+        </div>
+             
+         <div class="container MaincontentBlock">
+
+                <!--  / event box \ -->
+                <div class="eventBox">
+					
+                    <ul>
+                        <li>
+                        	<h3>School reopens on July 04, 2016 </h3>
+                            
+                            <span>July 04, 2016</span>
+                        
+                        </li>
+                        <li>
+                        	<h3>Admissions open for 2016-17</h3>
+                            
+                            <span>January 08, 2016</span>
+                        
+                        </li>
+                        <li>
+                        	<h3>Day care facility available</h3>
+                            
+                            <span>July, 2016 onwards</span>
+                        
+                        </li>
+                    </ul>						
+                                            
+                    <div class="clear"></div>
+                    
+                </div>
+                <!--  \ Why Choose Us  box / -->
+        </div>
+    
+    
+    <script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+			/*
+			 *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+			*/
+			$('.fancybox-media')
+				.attr('rel', 'media-gallery')
+				.fancybox({
+					openEffect : 'none',
+					closeEffect : 'none',
+					prevEffect : 'none',
+					nextEffect : 'none',
+
+					arrows : false,
+					helpers : {
+						media : {},
+						buttons : {}
+					}
+				});
+
+			/*
+			 *  Open manually
+			 */
+
+			$("#fancybox-manual-a").click(function() {
+				$.fancybox.open('1_b.html');
+			});
+
+			$("#fancybox-manual-b").click(function() {
+				$.fancybox.open({
+					href : 'iframe.html',
+					type : 'iframe',
+					padding : 5
+				});
+			});
+
+			$("#fancybox-manual-c").click(function() {
+				$.fancybox.open([
+					{
+						href : '1_b.jpg',
+						title : 'My title'
+					}, {
+						href : '2_b.jpg',
+						title : '2nd title'
+					}, {
+						href : '3_b.jpg'
+					}
+				], {
+					helpers : {
+						thumbs : {
+							width: 75,
+							height: 50
+						}
+					}
+				});
+			});
+
+
+		});
+	</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-16583087-26', 'auto');
+  ga('send', 'pageview');
+</script>
+<script src="../my.hellobar.com/d6a3540e311998e02574d9da00a35d20a4be6ce1.js" type="text/javascript" charset="utf-8" async="async"></script>
+
+      
+    
+        <!--  / footer container \ -->
+        <footer id="footerCntr">
+        	
+            <div class="container">
+             	   
+                <address>
+                <strong>TERI Prakriti School</strong>
+                The Energy and Resources Institute <br> TERI Gram, Gwal Pahari,<br>
+                Gurgaon, Haryana - 122001
+                
+                </address>
+                <address>
+                    Phone: 0124 - 2579329, 0124 - 2679329 <br>
+                    Email: <a href="mailto:info@teriprakritischool.com ">info@teriprakritischool.com</a>
+                </address>        
+                <ul>
+                    <li><a target="_blank" href="https://www.facebook.com/teriprakritischool/"><i class="fa fa-facebook"></i></a></li>
+                    <li class="youtube"><a target="_blank" href="https://www.youtube.com/user/teri"><i class="fa fa-youtube"></i></a></li>
+                </ul> 
+                
+            </div>
+
+        </footer>
+        <!--  \ footer container / -->
+    
+    </div>
+    <!--  \ main container / -->
+
+</div>
+<!--  \ wrapper / -->
+
+
+
+</body>
+
+
+<!-- Mirrored from www.teriprakritischool.org/update.php by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 11 Mar 2017 07:39:58 GMT -->
+</html> 
